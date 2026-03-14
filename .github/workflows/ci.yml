@@ -6,6 +6,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+
+    - name: Show system info
+      run: |
+        echo "CPU Info:"
+        lscpu
+        echo "Memory Info:"
+        free -h
+        echo "Disk Info:"
+        df -h
+
     - name: Run Django unit tests
       run: |
         pip install django
